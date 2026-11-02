@@ -60,8 +60,8 @@ Options:
 | `--out DIR`          | output folder (default `apl_output`)                                                  |
 | `--holdout CSV`      | csv with a `slide` column: those slides are scored but never used for fitting         |
 | `--cache PATH`       | save the features once (e.g. `cache/uni`); later runs load in seconds                 |
-| `--type-dist X`      | where the candidates are split into artefact types (default 0.3), see [Settings](#settings) |
-| `--not-artefact K..` | artefact types that are really tissue, e.g. `--not-artefact 5`, see [Settings](#settings)   |
+| `--type-dist X`      | where the candidates are split into artefact types (default 0.3) |
+| `--not-artefact K..` | artefact types that are really tissue, e.g. `--not-artefact 5`   |
 | `--flag-fraction F`  | share of fitting patches flagged as artefact, sets the cut-off (default 0.1)          |
 | `--seed N`           | random seed (default 0)                                                               |
 | `--plots`            | also save the candidate dendrogram (`dendrogram.png`)                                 |
