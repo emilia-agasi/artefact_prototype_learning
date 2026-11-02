@@ -17,3 +17,6 @@ apl_output/
 examples/tcga_ov_example.ipynb
 examples/quickstart.ipynb
 *.h5
+
+!docs/*.png
+!docs/*.svg

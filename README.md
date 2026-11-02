@@ -1,16 +1,23 @@
+<p align="center">
+  <img src="docs/APL_icon.svg" alt="APL logo" width="150">
+</p>
+
 # Artefact prototype learning (APL)
 
-Here we introduce APL, an unsupervised artefact detection tool for histopathology based on pre-trained patch embeddings.
+Here we introduce APL, an unsupervised artefact detection and QC tool for histopathology based on pre-trained patch embeddings.
 
 ## How it works
 
-1. **Find candidates.** Patches that are extreme on at least two of three geometric scores are likely artefacts. There is the option here to implement and test your own assumptions.
+<p align="center">
+  <img src="docs/method.png" alt="method" width="650">
+</p>
+
+1. **Find candidates.** We consider patches that are extreme on at least two of three geometric scores as likely artefacts. There is the option to implement and test your own assumptions.
 2. **Build prototypes.** Candidates are clustered into artefact prototypes. Independently, tissue anchors are identified.
 3. **Score every patch.** We score a patch by its `margin` = closeness to the nearest artefact prototype minus closeness to the nearest tissue
    prototype. A classifier trained on the resulting pseudo-labels outputs P(artefact).
 
-`flagged` marks the patches above a cut-off on `classifier`, set so that
-10% of the fitting patches are flagged (adapt with `--flag-fraction`). We recommend to visually inspect flagged patches.
+`flagged` marks the patches above a cut-off on `classifier`, set so that 10% of the fitting patches are flagged (adapt with `--flag-fraction`). We recommend to visually inspect flagged patches.
 
 ## Getting started
 
@@ -18,7 +25,7 @@ Here we introduce APL, an unsupervised artefact detection tool for histopatholog
 git clone https://github.com/emilia-agasi/apl.git
 cd apl
 pip install .
-pip install ".[slides]" #optional: for visual inspection
+pip install ".[slides]" # for visual inspection (optional)
 ```
 
 ## Input
@@ -43,12 +50,12 @@ This fits APL on every slide in the folder, scores every patch and writes to `ap
 | file               | content                                                                                   |
 | ------------------ | ----------------------------------------------------------------------------------------- |
 | `patch_scores.csv` | one row per patch: `slide`, `x`, `y`, `margin`, `classifier`, `flagged` and the intermediate scores |
-| `model.npz`        | the fitted model, for step 2                                                              |
-| `run.json`         | version, date, options, every setting, and a summary (candidates, prototypes, ...)      |
+| `model.npz`        | the fitted model                                                              |
+| `run.json`         | version, date, options, every setting, and a summary      |
 
 Options:
 
-| option               | what it does                                                                          |
+| option               | description                                                                         |
 | -------------------- | ------------------------------------------------------------------------------------- |
 | `--out DIR`          | output folder (default `apl_output`)                                                  |
 | `--holdout CSV`      | csv with a `slide` column: those slides are scored but never used for fitting         |
@@ -107,6 +114,11 @@ viz.patch_grid(meta, np.where(table["candidate"])[0][:32], wsi_dir) # any patche
 viz.prototype_patches(X, meta, model, wsi_dir) # the patches nearest each prototype
 viz.slide_heatmap(table, "slide_1", "classifier", wsi_dir) # artefact scores
 ```
+
+Examples of patches closest to artefact and tissue prototypes:
+<p align="center">
+  <img src="docs/example_prototypes.png" alt="prototypes" width="800">
+</p>
 
 ## Citation
 
