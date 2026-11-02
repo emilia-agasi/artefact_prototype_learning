@@ -3,7 +3,7 @@
 </p>
 
 # Artefact prototype learning (APL)
-
+[![DOI](https://zenodo.org/badge/1443065332.svg)](https://doi.org/10.5281/zenodo.23889153)
 Here we introduce APL, an unsupervised artefact detection and QC tool for histopathology based on pre-trained patch embeddings.
 
 ## How it works
@@ -122,7 +122,22 @@ Examples of patches closest to artefact and tissue prototypes:
 
 ## Citation
 
-If you use APL, please consider citing our package (see Zenodo DOI: ). A paper describing the method is in preparation.
+If you use APL, please consider citing our package (see Zenodo DOI: [10.5281/zenodo.23889153](https://doi.org/10.5281/zenodo.23889153)). A paper describing the method is in preparation.
+
+```bibtex
+@software{emilia_agasi_2026_23889154,
+  author       = {Emilia Agasi},
+  title        = {emilia-agasi/artefact\_prototype\_learning: APL
+                   v0.1.0
+                  },
+  month        = nov,
+  year         = 2026,
+  publisher    = {Zenodo},
+  version      = {0.1.0},
+  doi          = {10.5281/zenodo.23889154},
+  url          = {https://doi.org/10.5281/zenodo.23889154},
+}
+```
 
 ## Licence
 
