@@ -122,7 +122,7 @@ Examples of patches closest to artefact and tissue prototypes:
 
 ## Citation
 
-If you use APL, please consider citing our package (see Zenodo DOI: [10.5281/zenodo.23889153](https://doi.org/10.5281/zenodo.23889153)). A paper describing the method is in preparation.
+If you use APL, please consider citing our package (see Zenodo DOI: [10.5281/zenodo.23889153](https://doi.org/10.5281/zenodo.23889153)):
 
 ```bibtex
 @software{emilia_agasi_2026_23889154,
@@ -136,6 +136,19 @@ If you use APL, please consider citing our package (see Zenodo DOI: [10.5281/zen
   version      = {0.1.0},
   doi          = {10.5281/zenodo.23889154},
   url          = {https://doi.org/10.5281/zenodo.23889154},
+}
+```
+
+And the corresponding paper:
+```bibtex
+@misc{agasi2026apl,
+      title={The APL Doesn't Fall Far From The Tree: Unsupervised Artefact Prototype Learning in Histopathology}, 
+      author={Emilia Agasi and Charlie Gourley and C. Simon Herrington and Robert L. Hollis and T. Ian Simpson},
+      year={2026},
+      eprint={2611.08838},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2611.08838}, 
 }
 ```
 
